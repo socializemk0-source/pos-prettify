@@ -1,8 +1,8 @@
 # Roadmap
 
-- [ ] Analisar o PDF da página atual enviado pela cliente
-- [ ] Recriar a página atual com o visual da referência
-- [ ] Manter e reorganizar os cases enviados, com boa leitura no celular
-- [ ] Usar as fotos enviadas da cliente como destaque principal
-- [ ] Destacar o lançamento do livro como prova de autoridade
-- [ ] Validar o resultado no celular e no computador
+- [x] Analisar o PDF da página atual enviado pela cliente
+- [x] Recriar a página atual com o visual da referência
+- [x] Manter e reorganizar os cases enviados, com boa leitura no celular
+- [x] Usar as fotos enviadas da cliente como destaque principal
+- [x] Destacar o lançamento do livro como prova de autoridade
+- [x] Validar o resultado no celular e no computador
