@@ -4,34 +4,13 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/*
- * Design system definition.
- *
- * The @theme inline block maps CSS custom properties to Tailwind utility
- * classes (e.g. --color-primary -> bg-primary, text-primary).
- *
- * The :root and .dark blocks define the actual color values using oklch.
- * All colors MUST use oklch format.
- *
- * To add a new semantic color:
- * 1. Add the variable to :root (light value) and .dark (dark value)
- * 2. Register it in @theme inline as --color-<name>: var(--<name>)
- */
-
 @theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 8px);
-  --radius-3xl: calc(var(--radius) + 12px);
-  --radius-4xl: calc(var(--radius) + 16px);
+  --font-sans: "Manrope", sans-serif;
+  --font-display: "Cormorant Garamond", serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
@@ -40,105 +19,149 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-ring-offset-background: var(--background);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.984 0.003 247.858);
-  --sidebar-foreground: oklch(0.129 0.042 264.695);
-  --sidebar-primary: oklch(0.208 0.042 265.755);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.968 0.007 247.896);
-  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
-  --sidebar-border: oklch(0.929 0.013 255.508);
-  --sidebar-ring: oklch(0.704 0.04 256.788);
+  --background: oklch(0.12 0.018 257);
+  --foreground: oklch(0.94 0.01 80);
+  --card: oklch(0.17 0.018 257);
+  --card-foreground: oklch(0.94 0.01 80);
+  --primary: oklch(0.79 0.13 81);
+  --primary-foreground: oklch(0.16 0.02 64);
+  --secondary: oklch(0.23 0.024 255);
+  --secondary-foreground: oklch(0.94 0.01 80);
+  --muted: oklch(0.2 0.018 257);
+  --muted-foreground: oklch(0.7 0.018 76);
+  --accent: oklch(0.86 0.115 85);
+  --accent-foreground: oklch(0.14 0.015 60);
+  --border: oklch(0.35 0.025 255);
+  --input: oklch(0.3 0.022 255);
+  --ring: oklch(0.79 0.13 81);
+  --gold: oklch(0.79 0.13 81);
+  --gold-soft: oklch(0.9 0.08 86);
+  --surface: oklch(0.145 0.018 257);
+  --surface-raised: oklch(0.19 0.021 257);
 }
 
-.dark {
-  --background: oklch(0.129 0.042 264.695);
-  --foreground: oklch(0.984 0.003 247.858);
-  --card: oklch(0.208 0.042 265.755);
-  --card-foreground: oklch(0.984 0.003 247.858);
-  --popover: oklch(0.208 0.042 265.755);
-  --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
-  --primary-foreground: oklch(0.208 0.042 265.755);
-  --secondary: oklch(0.279 0.041 260.031);
-  --secondary-foreground: oklch(0.984 0.003 247.858);
-  --muted: oklch(0.279 0.041 260.031);
-  --muted-foreground: oklch(0.704 0.04 256.788);
-  --accent: oklch(0.279 0.041 260.031);
-  --accent-foreground: oklch(0.984 0.003 247.858);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.551 0.027 264.364);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.208 0.042 265.755);
-  --sidebar-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.279 0.041 260.031);
-  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.551 0.027 264.364);
+* { box-sizing: border-box; border-color: var(--border); }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--background); color: var(--foreground); font-family: var(--font-sans); }
+a { color: inherit; text-decoration: none; }
+
+.site-container { width: min(1120px, calc(100% - 40px)); margin-inline: auto; position: relative; }
+.hero-section { min-height: 820px; position: relative; isolation: isolate; display: flex; align-items: center; border-bottom: 1px solid color-mix(in oklab, var(--gold) 28%, transparent); }
+.hero-background { position: absolute; inset: 0; z-index: -3; width: 100%; height: 100%; object-fit: cover; opacity: .28; }
+.hero-shade { position: absolute; inset: 0; z-index: -2; background: linear-gradient(90deg, var(--background) 0%, color-mix(in oklab, var(--background) 94%, transparent) 47%, color-mix(in oklab, var(--background) 38%, transparent) 100%), linear-gradient(0deg, var(--background) 0%, transparent 32%); }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.02fr) minmax(380px, .98fr); align-items: end; min-height: 820px; }
+.hero-content { z-index: 2; padding: 76px 0 82px; max-width: 620px; }
+.progress-label { display: flex; justify-content: space-between; color: var(--muted-foreground); font-size: 12px; text-transform: uppercase; letter-spacing: .16em; margin-bottom: 9px; }
+.progress-label strong { color: var(--gold); }
+.progress-track { height: 8px; border-radius: 999px; overflow: hidden; background: var(--secondary); margin-bottom: 42px; }
+.progress-track span { display: block; width: 72%; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--gold-soft), var(--gold)); }
+.eyebrow { color: var(--gold); font-size: 12px; line-height: 1.4; font-weight: 700; text-transform: uppercase; letter-spacing: .18em; }
+h1, h2 { font-family: var(--font-display); font-weight: 500; letter-spacing: 0; margin: 0; }
+h1 { max-width: 620px; font-size: clamp(54px, 6vw, 82px); line-height: .93; }
+h1 em { display: block; color: var(--gold); font-weight: 500; }
+.hero-copy { max-width: 560px; color: var(--muted-foreground); font-size: 17px; line-height: 1.65; margin: 25px 0 28px; }
+.notice-list { display: grid; gap: 10px; margin-bottom: 22px; }
+.notice-item { display: grid; grid-template-columns: 24px 1fr; gap: 14px; align-items: center; border: 1px solid color-mix(in oklab, var(--gold) 35%, transparent); background: color-mix(in oklab, var(--surface-raised) 88%, transparent); padding: 14px 17px; border-radius: var(--radius-md); backdrop-filter: blur(10px); }
+.notice-item svg { color: var(--gold); width: 19px; }
+.notice-item p { margin: 0; font-size: 13px; line-height: 1.45; }
+.confirmation-button { width: fit-content; min-width: 330px; display: inline-grid; grid-template-columns: 20px 1fr 20px; gap: 12px; align-items: center; justify-content: center; border-radius: var(--radius-md); background: var(--primary); color: var(--primary-foreground); padding: 16px 20px; font-size: 13px; font-weight: 800; transition: transform .2s ease, background .2s ease; }
+.confirmation-button:hover { transform: translateY(-2px); background: var(--accent); }
+.microcopy { color: var(--muted-foreground); display: inline-block; font-size: 11px; margin-left: 16px; }
+.hero-person { align-self: stretch; position: relative; display: flex; align-items: flex-end; justify-content: center; overflow: hidden; }
+.hero-person img { position: relative; z-index: 1; width: min(590px, 100%); height: 760px; object-fit: cover; object-position: 50% 20%; filter: saturate(.78) contrast(1.05); -webkit-mask-image: linear-gradient(to bottom, black 76%, transparent 100%); mask-image: linear-gradient(to bottom, black 76%, transparent 100%); }
+.portrait-glow { position: absolute; width: 390px; height: 640px; bottom: 30px; background: color-mix(in oklab, var(--gold) 12%, transparent); filter: blur(60px); }
+.process-section, .diagnosis-section, .book-section, .testimonials-section { padding: 104px 0; }
+.process-section { background: var(--surface); }
+.section-heading h2, .diagnosis-intro h2, .book-copy h2, .final-inner h2 { font-size: clamp(42px, 5vw, 66px); line-height: 1; }
+.centered-heading { text-align: center; max-width: 720px; margin: 0 auto 56px; }
+.steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--border); }
+.step-item { padding: 34px 34px 12px 0; position: relative; border-top: 3px solid transparent; }
+.step-item + .step-item { padding-left: 34px; border-left: 1px solid var(--border); }
+.step-item.current { border-top-color: var(--gold); }
+.step-number { display: block; color: var(--gold); font-family: var(--font-display); font-size: 42px; margin-bottom: 18px; }
+.step-status { min-height: 22px; color: var(--muted-foreground); display: flex; align-items: center; gap: 6px; font-size: 11px; text-transform: uppercase; letter-spacing: .13em; }
+.step-item.current .step-status { color: var(--gold); }
+.step-item h3, .topics-list h3 { font-size: 18px; margin: 12px 0 9px; }
+.step-item p, .topics-list p, .diagnosis-intro > p:not(.eyebrow), .book-copy p { color: var(--muted-foreground); line-height: 1.7; }
+.diagnosis-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 100px; align-items: start; }
+.diagnosis-intro > p:not(.eyebrow) { max-width: 470px; }
+.diagnosis-intro img { margin-top: 38px; width: 100%; height: 420px; object-fit: cover; object-position: 50% 25%; border-radius: var(--radius-md); filter: saturate(.75); }
+.topics-list { list-style: none; padding: 0; margin: 0; }
+.topics-list li { display: grid; grid-template-columns: 52px 1fr; gap: 20px; padding: 26px 0; border-bottom: 1px solid var(--border); }
+.topics-list > li > span { color: var(--gold); font-family: var(--font-display); font-size: 25px; }
+.topics-list h3 { margin-top: 0; }
+.topics-list p { margin-bottom: 0; }
+.book-section { background: var(--gold-soft); color: var(--primary-foreground); }
+.book-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 90px; align-items: center; }
+.book-collage { display: grid; grid-template-columns: 1fr .78fr; align-items: center; gap: 14px; }
+.book-collage img { width: 100%; height: 520px; object-fit: cover; border-radius: var(--radius-sm); }
+.book-collage img:last-child { height: 430px; }
+.book-copy .eyebrow { color: color-mix(in oklab, var(--primary-foreground) 76%, var(--gold)); }
+.book-copy .lead { font-size: 20px; color: var(--primary-foreground); }
+.book-copy p { color: color-mix(in oklab, var(--primary-foreground) 72%, transparent); }
+.book-detail { border-top: 1px solid color-mix(in oklab, var(--primary-foreground) 22%, transparent); margin-top: 30px; padding-top: 22px; display: flex; justify-content: space-between; font-size: 13px; }
+.testimonials-section { background: var(--background); }
+.testimonials-section .section-heading { margin-bottom: 50px; }
+.testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.testimonial { min-height: 320px; background: var(--surface-raised); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 28px; display: flex; flex-direction: column; }
+.testimonial.featured { grid-column: span 2; background: var(--secondary); }
+.quote-mark { height: 40px; color: var(--gold); font-family: var(--font-display); font-size: 64px; line-height: .8; }
+.testimonial blockquote { margin: 16px 0 28px; color: color-mix(in oklab, var(--foreground) 82%, transparent); line-height: 1.7; font-size: 15px; }
+.testimonial footer { margin-top: auto; display: flex; flex-direction: column; gap: 4px; }
+.testimonial footer strong { font-size: 14px; }
+.testimonial footer span { color: var(--muted-foreground); font-size: 12px; }
+.final-section { padding: 100px 0; background: var(--surface); text-align: center; }
+.final-inner { max-width: 760px; }
+.final-inner h2 { margin-bottom: 34px; }
+.final-inner .confirmation-button { margin-inline: auto; }
+.site-footer { padding: 28px 0; border-top: 1px solid var(--border); color: var(--muted-foreground); font-size: 12px; }
+.site-footer .site-container { display: flex; justify-content: space-between; align-items: center; }
+.site-footer span { color: var(--gold); font-family: var(--font-display); font-size: 20px; }
+.site-footer p { margin: 0; }
+
+@media (max-width: 820px) {
+  .site-container { width: min(100% - 28px, 620px); }
+  .hero-section, .hero-grid { min-height: auto; }
+  .hero-grid { display: flex; flex-direction: column; }
+  .hero-content { order: 2; padding: 0 0 52px; margin-top: -110px; }
+  .hero-person { order: 1; align-self: stretch; height: 500px; margin-inline: -14px; }
+  .hero-person img { height: 520px; width: 100%; object-position: 50% 18%; }
+  .hero-shade { background: linear-gradient(0deg, var(--background) 7%, color-mix(in oklab, var(--background) 10%, transparent) 70%); }
+  .progress-track { margin-bottom: 30px; }
+  h1 { font-size: 56px; }
+  .notice-item { background: color-mix(in oklab, var(--surface-raised) 94%, transparent); }
+  .confirmation-button { width: 100%; min-width: 0; }
+  .microcopy { display: block; text-align: center; margin: 10px 0 0; }
+  .process-section, .diagnosis-section, .book-section, .testimonials-section { padding: 72px 0; }
+  .steps-grid { grid-template-columns: 1fr; }
+  .step-item, .step-item + .step-item { padding: 26px 0; border-left: 0; border-top: 1px solid var(--border); }
+  .step-item.current { border-top: 3px solid var(--gold); }
+  .diagnosis-grid, .book-grid { grid-template-columns: 1fr; gap: 50px; }
+  .diagnosis-intro img { height: 400px; }
+  .book-collage { order: 2; }
+  .book-copy { order: 1; }
+  .book-collage img { height: 400px; }
+  .book-collage img:last-child { height: 330px; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .testimonial.featured { grid-column: auto; }
+  .testimonial { min-height: 0; }
+  .site-footer .site-container { flex-direction: column; text-align: center; gap: 8px; }
 }
 
-@layer base {
-  * {
-    border-color: var(--color-border);
-  }
-
-  body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
-  }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
 }
