@@ -8,3 +8,8 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+## Project architecture
+
+- Keep this as a focused single-page post-booking experience at `/`; the conversion journey should remain direct and distraction-free.
+- Store uploaded photography through Lovable Assets pointers, while generated design imagery stays under `src/assets`; this keeps large user files out of source control.
