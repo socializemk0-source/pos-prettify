@@ -4,4 +4,5 @@
 - [ ] Recriar a página atual com o visual da referência
 - [ ] Manter e reorganizar os cases enviados, com boa leitura no celular
 - [ ] Usar as fotos enviadas da cliente como destaque principal
+- [ ] Destacar o lançamento do livro como prova de autoridade
 - [ ] Validar o resultado no celular e no computador
