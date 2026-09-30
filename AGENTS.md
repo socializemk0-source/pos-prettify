@@ -13,3 +13,4 @@
 
 - Keep this as a focused single-page post-booking experience at `/`; the conversion journey should remain direct and distraction-free.
 - Store uploaded photography through Lovable Assets pointers, while generated design imagery stays under `src/assets`; this keeps large user files out of source control.
+- Lovable Cloud is connected; ebook leads are captured via the `ebook_leads` table (anon INSERT only, no reads) through `src/lib/ebook-lead.functions.ts` + `ebook-lead.server.ts` — keep lead capture public-form only, never expose stored leads to the browser.
