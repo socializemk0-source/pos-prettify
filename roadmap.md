@@ -6,3 +6,5 @@
 - [x] Usar as fotos enviadas da cliente como destaque principal
 - [x] Destacar o lançamento do livro como prova de autoridade
 - [x] Validar o resultado no celular e no computador
+- [x] Adicionar mini formulário no fim da página (nome, telefone, e-mail) com CTA do ebook grátis
+- [x] Validar o formulário de ponta a ponta (envio salvo no banco e mensagem de confirmação)
