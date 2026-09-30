@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, BookOpen, CheckCircle2, MessageCircle, PhoneCall } from "lucide-react";
 
@@ -91,7 +91,7 @@ function EbookForm() {
   const [status, setStatus] = useState<EbookStatus>("idle");
   const [error, setError] = useState("");
 
-  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setError("");
 
@@ -117,7 +117,7 @@ function EbookForm() {
     return (
       <div className="ebook-card ebook-done" role="status">
         <CheckCircle2 aria-hidden="true" size={34} />
-        <h3>Prontinho, {cleanName(name)}!</h3>
+        <h3>Prontinho, {name.trim()}!</h3>
         <p>Recebemos seus dados. O ebook vai chegar no seu e-mail e no seu WhatsApp.</p>
       </div>
     );
