@@ -182,6 +182,9 @@ h1 em { display: block; color: var(--gold); font-weight: 500; }
   .testimonial.featured { grid-column: auto; }
   .testimonial { min-height: 0; }
   .site-footer .site-container { flex-direction: column; text-align: center; gap: 8px; }
+  .ebook-section { padding: 72px 0 80px; }
+  .ebook-grid { grid-template-columns: 1fr; gap: 44px; }
+  .ebook-card { padding: 26px 22px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
