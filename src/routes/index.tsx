@@ -1,5 +1,8 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, Check, Clock3, MessageCircle, PhoneCall } from "lucide-react";
+import { ArrowRight, BookOpen, CheckCircle2, MessageCircle, PhoneCall } from "lucide-react";
+
+import { saveEbookLead } from "@/lib/ebook-lead.functions";
 
 import michaelPortrait from "@/assets/IMG_4569.jpeg.asset.json";
 import michaelWelcome from "@/assets/IMG_4565.jpeg.asset.json";
@@ -76,6 +79,102 @@ function ConfirmationLink({ label = "Confirmar meu horário" }: { label?: string
       <span>{label}</span>
       <ArrowRight aria-hidden="true" size={18} />
     </a>
+  );
+}
+
+type EbookStatus = "idle" | "sending" | "done" | "error";
+
+function EbookForm() {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<EbookStatus>("idle");
+  const [error, setError] = useState("");
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setError("");
+
+    const cleanName = name.trim();
+    const cleanEmail = email.trim();
+
+    if (cleanName.length < 2) return setError("Digite seu nome.");
+    if (!/^\S+@\S+\.\S+$/.test(cleanEmail)) return setError("Digite um e-mail válido.");
+    const digits = phone.replace(/\D/g, "");
+    if (digits.length < 10 || digits.length > 13) return setError("Digite um telefone válido com DDD.");
+
+    setStatus("sending");
+    try {
+      await saveEbookLead({ data: { name: cleanName, phone: phone.trim(), email: cleanEmail } });
+      setStatus("done");
+    } catch {
+      setStatus("error");
+      setError("Não foi possível enviar agora. Tente de novo em instantes.");
+    }
+  }
+
+  if (status === "done") {
+    return (
+      <div className="ebook-card ebook-done" role="status">
+        <CheckCircle2 aria-hidden="true" size={34} />
+        <h3>Prontinho, {cleanName(name)}!</h3>
+        <p>Recebemos seus dados. O ebook vai chegar no seu e-mail e no seu WhatsApp.</p>
+      </div>
+    );
+  }
+
+  return (
+    <form className="ebook-card" onSubmit={handleSubmit} noValidate>
+      <div className="ebook-field">
+        <label htmlFor="ebook-name">Nome</label>
+        <input
+          id="ebook-name"
+          name="name"
+          type="text"
+          autoComplete="name"
+          maxLength={100}
+          placeholder="Seu nome"
+          value={name}
+          onChange={(event) => setName(event.target.value)}
+          required
+        />
+      </div>
+      <div className="ebook-field">
+        <label htmlFor="ebook-phone">Telefone</label>
+        <input
+          id="ebook-phone"
+          name="phone"
+          type="tel"
+          autoComplete="tel"
+          maxLength={20}
+          placeholder="(71) 90000-0000"
+          value={phone}
+          onChange={(event) => setPhone(event.target.value)}
+          required
+        />
+      </div>
+      <div className="ebook-field">
+        <label htmlFor="ebook-email">E-mail</label>
+        <input
+          id="ebook-email"
+          name="email"
+          type="email"
+          autoComplete="email"
+          maxLength={255}
+          placeholder="voce@email.com"
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
+          required
+        />
+      </div>
+      {error ? <p className="ebook-error" role="alert">{error}</p> : null}
+      <button className="confirmation-button ebook-submit" type="submit" disabled={status === "sending"}>
+        <BookOpen aria-hidden="true" size={18} />
+        <span>{status === "sending" ? "Enviando..." : "Quero meu ebook grátis"}</span>
+        <ArrowRight aria-hidden="true" size={18} />
+      </button>
+      <span className="ebook-note">Seus dados estão seguros. Sem spam.</span>
+    </form>
   );
 }
 
@@ -218,6 +317,25 @@ function Index() {
           <p className="eyebrow">Seu horário está reservado</p>
           <h2>Vamos conversar sobre o próximo passo do seu negócio?</h2>
           <ConfirmationLink />
+        </div>
+      </section>
+
+      <section className="ebook-section">
+        <div className="site-container ebook-grid">
+          <div className="ebook-intro">
+            <p className="eyebrow">Bônus gratuito</p>
+            <h2>Ganhe o ebook grátis</h2>
+            <p className="ebook-copy">
+              Deixe seu nome, telefone e e-mail para receber o ebook do Michael. É rápido — e em
+              seguida a gente já confirma sua conversa pelo WhatsApp.
+            </p>
+            <ul className="ebook-benefits">
+              <li><CheckCircle2 aria-hidden="true" />Método comercial em linguagem simples</li>
+              <li><CheckCircle2 aria-hidden="true" />Leitura rápida, feita pra aplicar hoje</li>
+              <li><CheckCircle2 aria-hidden="true" />Grátis, sem compromisso</li>
+            </ul>
+          </div>
+          <EbookForm />
         </div>
       </section>
 
