@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, BookOpen, CheckCircle2, MessageCircle, PhoneCall } from "lucide-react";
+import { ArrowRight, BookOpen, Check, CheckCircle2, MessageCircle, PhoneCall } from "lucide-react";
 
 import { saveEbookLead } from "@/lib/ebook-lead.functions";
 
