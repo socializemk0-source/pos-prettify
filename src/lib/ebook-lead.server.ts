@@ -15,8 +15,8 @@ function createSupabaseFetch(supabaseKey: string): typeof fetch {
 }
 
 export async function insertEbookLead(lead: { name: string; phone: string; email: string }) {
-  const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
-  const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
+  const SUPABASE_URL = import.meta.env["VITE_SUPABASE_URL"];
+  const SUPABASE_KEY = import.meta.env["VITE_SUPABASE_PUBLISHABLE_KEY"];
 
   if (!SUPABASE_URL || !SUPABASE_KEY) {
     throw new Error("Cloud environment is not configured");
