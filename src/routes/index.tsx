@@ -35,6 +35,9 @@ const whatsappLink = "https://wa.me/";
 const mentoriaWhatsAppLink = `https://wa.me/?text=${encodeURIComponent(
   "Quero ser aluno do Michael — Mentoria Individual de 90 dias.",
 )}`;
+const giftWhatsAppLink = `https://wa.me/?text=${encodeURIComponent(
+  "Quero receber o ebook do Michael — Meu presente para você.",
+)}`;
 
 const testimonials = [
   {
@@ -118,10 +121,25 @@ function EbookForm() {
 
   if (status === "done") {
     return (
-      <div className="ebook-card ebook-done" role="status">
-        <CheckCircle2 aria-hidden="true" size={34} />
-        <h3>Prontinho, {name.trim()}!</h3>
-        <p>Recebemos seus dados. O ebook vai chegar no seu e-mail e no seu WhatsApp.</p>
+      <div className="cta-reveal">
+        <div className="ebook-card ebook-done" role="status">
+          <CheckCircle2 aria-hidden="true" size={34} />
+          <h3>Prontinho, {name.trim()}!</h3>
+          <p>Recebemos seus dados. O ebook vai chegar no seu e-mail e no seu WhatsApp.</p>
+        </div>
+        <p className="cta-reveal-label">Agora escolha o seu próximo passo</p>
+        <div className="cta-grid">
+          <a className="cta-card cta-gift" href={giftWhatsAppLink} target="_blank" rel="noreferrer">
+            <Gift aria-hidden="true" size={26} />
+            <strong>Meu presente para você</strong>
+            <p>Baixe gratuitamente o material e descubra onde está perdendo vendas.</p>
+          </a>
+          <a className="cta-card cta-mentoria" href={mentoriaWhatsAppLink} target="_blank" rel="noreferrer">
+            <GraduationCap aria-hidden="true" size={26} />
+            <strong>Quero ser aluno do Michael</strong>
+            <p>Conheça a Mentoria Individual de 90 dias.</p>
+          </a>
+        </div>
       </div>
     );
   }
@@ -326,11 +344,12 @@ function Index() {
       <section className="ebook-section">
         <div className="site-container ebook-grid">
           <div className="ebook-intro">
-            <p className="eyebrow">Bônus gratuito</p>
-            <h2>Ganhe o ebook grátis</h2>
+            <p className="eyebrow">Material gratuito</p>
+            <h2>Descubra onde você está perdendo vendas</h2>
             <p className="ebook-copy">
-              Deixe seu nome, telefone e e-mail para receber o ebook do Michael. É rápido — e em
-              seguida a gente já confirma sua conversa pelo WhatsApp.
+              O diagnóstico gratuito do Michael mostra, na prática, onde o seu comercial está
+              deixando dinheiro na mesa — e o que corrigir primeiro. Deixe seu nome, telefone
+              e e-mail para receber o material.
             </p>
             <ul className="ebook-benefits">
               <li><CheckCircle2 aria-hidden="true" />Método comercial em linguagem simples</li>
