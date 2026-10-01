@@ -8,3 +8,5 @@
 - [x] Validar o resultado no celular e no computador
 - [x] Adicionar mini formulário no fim da página (nome, telefone, e-mail) com CTA do ebook grátis
 - [x] Validar o formulário de ponta a ponta (envio salvo no banco e mensagem de confirmação)
+- [x] Adicionar dois CTAs principais (presente + mentoria) na identidade azul e cinza
+- [x] Restringir os dois CTAs ao pós-envio do formulário (nome, telefone, e-mail), com headline forte e destaque maior no botão da mentoria

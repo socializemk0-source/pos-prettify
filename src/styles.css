@@ -51,6 +51,10 @@
   --gold-soft: oklch(0.9 0.08 86);
   --surface: oklch(0.145 0.018 257);
   --surface-raised: oklch(0.19 0.021 257);
+  --cta-blue: oklch(0.56 0.17 252);
+  --cta-blue-bright: oklch(0.67 0.15 252);
+  --cta-steel: oklch(0.75 0.02 252);
+  --cta-steel-line: oklch(0.45 0.022 252);
 }
 
 * { box-sizing: border-box; border-color: var(--border); }
@@ -150,6 +154,22 @@ h1 em { display: block; color: var(--gold); font-weight: 500; }
 .ebook-done h3 { margin: 0; font-size: 24px; font-weight: 500; font-family: var(--font-display); }
 .ebook-done p { margin: 0; color: var(--muted-foreground); line-height: 1.6; font-size: 14px; max-width: 320px; }
 
+.cta-reveal { grid-column: 1 / -1; margin-top: 6px; display: grid; gap: 24px; justify-items: center; text-align: center; }
+.cta-reveal-label { margin: 0; color: var(--cta-steel); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .16em; }
+.cta-grid { display: grid; grid-template-columns: 1fr 1.18fr; gap: 18px; width: min(100%, 880px); }
+.cta-card { display: grid; gap: 8px; justify-items: center; align-content: center; padding: 30px 26px; border-radius: var(--radius-lg); text-align: center; transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+.cta-card svg { width: 26px; }
+.cta-card strong { font-size: 16px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; }
+.cta-card p { margin: 0; font-size: 13px; line-height: 1.5; }
+.cta-card:hover { transform: translateY(-3px); }
+.cta-gift { background: color-mix(in oklab, var(--surface-raised) 88%, transparent); border: 1px solid color-mix(in oklab, var(--cta-steel-line) 85%, transparent); color: var(--foreground); }
+.cta-gift svg { color: var(--cta-steel); }
+.cta-gift p { color: var(--muted-foreground); }
+.cta-gift:hover { border-color: var(--cta-steel); }
+.cta-mentoria { background: linear-gradient(135deg, var(--cta-blue-bright) 0%, var(--cta-blue) 55%, oklch(0.4 0.16 256) 100%); border: 1px solid color-mix(in oklab, var(--cta-blue-bright) 70%, transparent); color: oklch(0.98 0.01 250); box-shadow: 0 26px 60px -26px color-mix(in oklab, var(--cta-blue) 62%, transparent); }
+.cta-mentoria p { color: color-mix(in oklab, white 78%, transparent); }
+.cta-mentoria:hover { box-shadow: 0 30px 70px -24px color-mix(in oklab, var(--cta-blue) 72%, transparent); }
+
 .site-footer { padding: 28px 0; border-top: 1px solid var(--border); color: var(--muted-foreground); font-size: 12px; }
 .site-footer .site-container { display: flex; justify-content: space-between; align-items: center; }
 .site-footer span { color: var(--gold); font-family: var(--font-display); font-size: 20px; }
@@ -185,6 +205,8 @@ h1 em { display: block; color: var(--gold); font-weight: 500; }
   .ebook-section { padding: 72px 0 80px; }
   .ebook-grid { grid-template-columns: 1fr; gap: 44px; }
   .ebook-card { padding: 26px 22px; }
+  .cta-grid { grid-template-columns: 1fr; }
+  .cta-card { padding: 26px 20px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
