@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, BookOpen, Check, CheckCircle2, Clock3, MessageCircle, PhoneCall } from "lucide-react";
+import { ArrowRight, BookOpen, Check, CheckCircle2, Clock3, Gift, GraduationCap, MessageCircle, PhoneCall } from "lucide-react";
 
 import { saveEbookLead } from "@/lib/ebook-lead.functions";
 
@@ -32,6 +32,9 @@ export const Route = createFileRoute("/")({
 });
 
 const whatsappLink = "https://wa.me/";
+const mentoriaWhatsAppLink = `https://wa.me/?text=${encodeURIComponent(
+  "Quero ser aluno do Michael — Mentoria Individual de 90 dias.",
+)}`;
 
 const testimonials = [
   {
