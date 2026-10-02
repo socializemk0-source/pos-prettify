@@ -10,4 +10,5 @@
 - [x] Validar o formulário de ponta a ponta (envio salvo no banco e mensagem de confirmação)
 - [x] Adicionar dois CTAs principais (presente + mentoria) na identidade azul e cinza
 - [x] Restringir os dois CTAs ao pós-envio do formulário (nome, telefone, e-mail), com headline forte e destaque maior no botão da mentoria
-- [ ] Revisar e ajustar toda a experiência para celular e computador
+- [x] Revisar e ajustar toda a experiência para celular e computador
+- [x] Direcionar todos os links de WhatsApp para 62 99856-0800
