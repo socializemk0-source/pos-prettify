@@ -31,11 +31,14 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const whatsappLink = "https://wa.me/";
-const mentoriaWhatsAppLink = `https://wa.me/?text=${encodeURIComponent(
+const whatsappNumber = "5562998560800";
+const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+  "Olá, Michael! Quero confirmar meu horário para a conversa estratégica.",
+)}`;
+const mentoriaWhatsAppLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
   "Quero ser aluno do Michael — Mentoria Individual de 90 dias.",
 )}`;
-const giftWhatsAppLink = `https://wa.me/?text=${encodeURIComponent(
+const giftWhatsAppLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
   "Quero receber o ebook do Michael — Meu presente para você.",
 )}`;
 
