@@ -8,6 +8,7 @@ import michaelPortrait from "@/assets/IMG_4569.jpeg.asset.json";
 import michaelWelcome from "@/assets/IMG_4565.jpeg.asset.json";
 import bookLaunch from "@/assets/IMG_0360.jpeg.asset.json";
 import bookDisplay from "@/assets/IMG_0359.jpeg.asset.json";
+import ebookPdf from "@/assets/os-7-codigos-da-venda.pdf.asset.json";
 import officeBackground from "@/assets/commercial-strategy-background.jpg";
 
 export const Route = createFileRoute("/")({
@@ -44,6 +45,7 @@ const contactWhatsAppLink = `https://wa.me/${whatsappNumber}?text=${encodeURICom
 const giftWhatsAppLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
   "Quero baixar os 7 códigos da venda.",
 )}`;
+const ebookDownloadUrl = ebookPdf.url;
 
 const testimonials = [
   {
@@ -135,7 +137,7 @@ function EbookForm() {
         </div>
         <p className="cta-reveal-label">Agora escolha o seu próximo passo</p>
         <div className="cta-grid">
-          <a className="cta-card cta-gift" href={giftWhatsAppLink} target="_blank" rel="noreferrer">
+          <a className="cta-card cta-gift" href={ebookDownloadUrl} download="Os-7-Codigos-da-Venda-Michael-Almeida.pdf" target="_blank" rel="noreferrer">
             <Gift aria-hidden="true" size={26} />
             <strong>Baixar os 7 códigos da venda</strong>
             <p>Descubra em qual etapa da sua venda você está perdendo dinheiro.</p>
