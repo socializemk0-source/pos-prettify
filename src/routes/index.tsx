@@ -42,9 +42,6 @@ const mentoriaWhatsAppLink = `https://wa.me/${whatsappNumber}?text=${encodeURICo
 const contactWhatsAppLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
   "Olá, Michael! Quero conversar com você.",
 )}`;
-const giftWhatsAppLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-  "Quero baixar os 7 códigos da venda.",
-)}`;
 const ebookDownloadUrl = ebookPdf.url;
 
 const testimonials = [
