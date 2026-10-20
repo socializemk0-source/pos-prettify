@@ -38,8 +38,11 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 const mentoriaWhatsAppLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
   "Quero ser aluno do Michael — Mentoria Individual de 90 dias.",
 )}`;
+const contactWhatsAppLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+  "Olá, Michael! Quero conversar com você.",
+)}`;
 const giftWhatsAppLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-  "Quero receber o ebook do Michael — Meu presente para você.",
+  "Quero baixar os 7 códigos da venda.",
 )}`;
 
 const testimonials = [
@@ -134,13 +137,13 @@ function EbookForm() {
         <div className="cta-grid">
           <a className="cta-card cta-gift" href={giftWhatsAppLink} target="_blank" rel="noreferrer">
             <Gift aria-hidden="true" size={26} />
-            <strong>Meu presente para você</strong>
-            <p>Baixe gratuitamente o material e descubra onde está perdendo vendas.</p>
+            <strong>Baixar os 7 códigos da venda</strong>
+            <p>Descubra em qual etapa da sua venda você está perdendo dinheiro.</p>
           </a>
           <a className="cta-card cta-mentoria" href={mentoriaWhatsAppLink} target="_blank" rel="noreferrer">
             <GraduationCap aria-hidden="true" size={26} />
             <strong>Quero ser aluno do Michael</strong>
-            <p>Conheça a Mentoria Individual de 90 dias.</p>
+            <p>Conheça a Mentoria Individual de 90 dias e corrija os gargalos que estão limitando sua performance em vendas.</p>
           </a>
         </div>
       </div>
@@ -194,7 +197,7 @@ function EbookForm() {
       {error ? <p className="ebook-error" role="alert">{error}</p> : null}
       <button className="confirmation-button ebook-submit" type="submit" disabled={status === "sending"}>
         <BookOpen aria-hidden="true" size={18} />
-        <span>{status === "sending" ? "Enviando..." : "Quero meu ebook grátis"}</span>
+        <span>{status === "sending" ? "Enviando..." : "Quero receber meu presente"}</span>
         <ArrowRight aria-hidden="true" size={18} />
       </button>
       <span className="ebook-note">Seus dados estão seguros. Sem spam.</span>
@@ -361,6 +364,21 @@ function Index() {
             </ul>
           </div>
           <EbookForm />
+        </div>
+      </section>
+
+      <section className="mentoria-final">
+        <div className="site-container mentoria-final-inner">
+          <p className="eyebrow">Mentoria Individual</p>
+          <h2>90 dias de acompanhamento individual com Michael Almeida.</h2>
+          <a className="cta-card cta-mentoria mentoria-final-main" href={mentoriaWhatsAppLink} target="_blank" rel="noreferrer">
+            <GraduationCap aria-hidden="true" size={26} />
+            <strong>Quero conhecer a mentoria</strong>
+          </a>
+          <a className="mentoria-final-secondary" href={contactWhatsAppLink} target="_blank" rel="noreferrer">
+            <MessageCircle aria-hidden="true" size={18} />
+            <span>Falar com o Michael no WhatsApp</span>
+          </a>
         </div>
       </section>
 
